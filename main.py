@@ -1,6 +1,6 @@
 #OpenGL library import
-import OpenGL 
-OpenGL.ERROR_ON_COPY = True 
+import OpenGL
+OpenGL.ERROR_ON_COPY = True
 
 #For creating window
 from OpenGL.GL import *
@@ -21,27 +21,41 @@ windowHeight = int(sys.argv[5])
 #Function to initiate the 2D orthogonal window
 def initiate2DWindow(r,g,b):
     #Clear buffer
-    glClearColor(r,g,b,0.0)    
+    glClearColor(r,g,b,0.0)
     #Set 2D orthogonal window with specified width and height
     glMatrixMode (GL_PROJECTION)
     gluOrtho2D (0.0, float(imageWidth), 0.0, float(imageHeight))
+
+def drawDragonAsPolygon():
+    glColor3ub(255, 0, 0)
+    glBegin(GL_POLYGON)
+    for line in fourTupleArray:
+        glVertex2i(line[0], int(imageHeight) - line[1])
+        glVertex2i(line[2], int(imageHeight) - line[3])
+    glEnd()
+
+def drawDragonAsLines():
+    #Set line color to red
+    glColor3f(1.0, 0.0, 0.0)
+    #Draw each line from array of points
+    for line in fourTupleArray:
+      #Line section begin
+      glBegin(GL_LINES)
+      #Set Point 1
+      glVertex2i(line[0], int(imageHeight) - line[1])
+      #Set Point 2
+      glVertex2i(line[2], int(imageHeight) - line[3])
+      #Line section end
+      glEnd()
 
 #Function to draw the display
 def renderDisplay():
     #Clear buffer
     glClear(GL_COLOR_BUFFER_BIT)
-    #Set line color to red
-    glColor3f(1.0, 0.0, 0.0)
-    #Draw each line from array of points
-    for line in fourTupleArray:        
-        #Line section begin
-        glBegin(GL_LINES)
-        #Set Point 1
-        glVertex2i(line[0], int(imageHeight) - line[1])   
-        #Set Point 2
-        glVertex2i(line[2], int(imageHeight) - line[3])   
-        #Line section end
-        glEnd()
+
+    #Draw dragon
+    drawDragonAsLines()
+
     #Draw line and flush the buffer
     glFlush()
 
@@ -75,7 +89,7 @@ readPointsFromFile()
 glutInit(sys.argv)
 #Set display mode to single using RGB coloring method
 glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB)
-#Set initial window size to 
+#Set initial window size to
 glutInitWindowSize (windowWidth, windowHeight)
 #Set initial window position to bottom left
 glutInitWindowPosition (0, 0)
