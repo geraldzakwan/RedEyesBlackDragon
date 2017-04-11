@@ -27,11 +27,18 @@ def initiate2DWindow(r,g,b):
     gluOrtho2D (0.0, float(imageWidth), 0.0, float(imageHeight))
 
 def drawDragonAsPolygon():
+    #Set fill color as red
     glColor3ub(255, 0, 0)
+
+    #Draw polygon based on vertices, polygon section begin
     glBegin(GL_POLYGON)
+    #Put each two points from array of points
     for line in fourTupleArray:
+        #Set Point 1
         glVertex2i(line[0], int(imageHeight) - line[1])
+        #Set Point 2
         glVertex2i(line[2], int(imageHeight) - line[3])
+    #Polygon section end
     glEnd()
 
 def drawDragonAsLines():
