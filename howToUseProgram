@@ -1,3 +1,3 @@
 How to run :
 
-python main.py [filename] [imageWidth] [imageHeight] [windowWidth] [windowHeight] [windowName]
+python main.py
