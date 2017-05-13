@@ -1,3 +1,9 @@
 How to run :
 
 python main.py
+
+Dependencies :
+
+Python 2.x
+PyOpenGL
+GLUT

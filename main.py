@@ -24,6 +24,8 @@ fourTupleArrayH = []	#head
 fourTupleArrayHA = []	#head fur a...
 fourTupleArrayHB = []
 
+fourTupleArray2 = []
+
 #Height and width of the image
 imageWidth = "1500"
 imageHeight = "705"
@@ -47,9 +49,9 @@ def drawDragonAsPolygonR():
         glVertex2i(line[0], int(imageHeight) - line[1])
         glVertex2i(line[2], int(imageHeight) - line[3])
     glEnd()
-    
+
 def drawDragonAsPolygonB():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayB:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -65,7 +67,7 @@ def drawDragonAsPolygonL():
 	glEnd()
 
 def drawDragonAsPolygonN():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayN:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -73,7 +75,7 @@ def drawDragonAsPolygonN():
 	glEnd()
 
 def drawDragonAsPolygonTA():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTA:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -82,7 +84,7 @@ def drawDragonAsPolygonTA():
 
 
 def drawDragonAsPolygonTB():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTB:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -91,7 +93,7 @@ def drawDragonAsPolygonTB():
 
 
 def drawDragonAsPolygonTC():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTC:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -100,7 +102,7 @@ def drawDragonAsPolygonTC():
 
 
 def drawDragonAsPolygonTD():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTD:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -108,7 +110,7 @@ def drawDragonAsPolygonTD():
 	glEnd()
 
 def drawDragonAsPolygonTE():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTE:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -116,7 +118,7 @@ def drawDragonAsPolygonTE():
 	glEnd()
 
 def drawDragonAsPolygonTF():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTF:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -124,7 +126,7 @@ def drawDragonAsPolygonTF():
 	glEnd()
 
 def drawDragonAsPolygonTG():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayTG:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -133,7 +135,7 @@ def drawDragonAsPolygonTG():
 
 
 def drawDragonAsPolygonH():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayH:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -141,7 +143,7 @@ def drawDragonAsPolygonH():
 	glEnd()
 
 def drawDragonAsPolygonHA():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayHA:
 		glVertex2i(line[0], int(imageHeight) - line[1])
@@ -149,18 +151,37 @@ def drawDragonAsPolygonHA():
 	glEnd()
 
 def drawDragonAsPolygonHB():
-	glColor3ub(255, 0, 0)
+	glColor3ub(150, 0, 0)
 	glBegin(GL_POLYGON)
 	for line in fourTupleArrayHB:
 		glVertex2i(line[0], int(imageHeight) - line[1])
 		glVertex2i(line[2], int(imageHeight) - line[3])
 	glEnd()
 
+def drawBackup1():
+    glColor3ub(0, 0, 0)
+    glBegin(GL_POLYGON)
+    glVertex2i(719, 705-197)
+    glVertex2i(690, 705-149)
+    glVertex2i(579, 705-75)
+    glVertex2i(633, 705-13)
+    glEnd()
+
+def drawBackup2():
+    glColor3ub(0, 0, 0)
+    glBegin(GL_POLYGON)
+    glVertex2i(865, 705-15)
+    glVertex2i(921, 705-65)
+    glVertex2i(901, 705-147)
+    glVertex2i(823, 705-195)
+    glEnd()
+
 def drawDragonAsLines():
-    #Set line color to red
-    glColor3f(1.0, 0.0, 0.0)
+    #Set line color to black
+    glColor3f(255.0, 255.0, 255.0)
     #Draw each line from array of points
-    for line in fourTupleArray:
+    glLineWidth(3.0)
+    for line in fourTupleArray2:
       #Line section begin
       glBegin(GL_LINES)
       #Set Point 1
@@ -190,7 +211,10 @@ def renderDisplay():
     drawDragonAsPolygonH()
     drawDragonAsPolygonHA()
     drawDragonAsPolygonHB()
-	
+    drawBackup1()
+    drawBackup2()
+    drawDragonAsLines()
+
     #Draw line and flush the buffer
     glFlush()
 
@@ -206,9 +230,9 @@ def readPointsFromFileRight():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayR.append(temporaryList)
-            
+
             #Function to read array of points from file
-            
+
 def readPointsFromFileBody():
     #File mode = read
     mode = 'r'
@@ -220,8 +244,8 @@ def readPointsFromFileBody():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayB.append(temporaryList)
-            
-            
+
+
             #Function to read array of points from file
 def readPointsFromFileLeft():
     #File mode = read
@@ -234,7 +258,7 @@ def readPointsFromFileLeft():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayL.append(temporaryList)
-            
+
 #Function to read array of points from file
 def readPointsFromFileN():
     #File mode = read
@@ -247,9 +271,9 @@ def readPointsFromFileN():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayN.append(temporaryList)
-            
+
             #Function to read array of points from file
-            
+
   #Function to read array of points from file
 def readPointsFromFileTA():
     #File mode = read
@@ -262,7 +286,7 @@ def readPointsFromFileTA():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTA.append(temporaryList)
-            
+
   #Function to read array of points from file
 def readPointsFromFileTB():
     #File mode = read
@@ -275,8 +299,8 @@ def readPointsFromFileTB():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTB.append(temporaryList)
-           
-            
+
+
   #Function to read array of points from file
 def readPointsFromFileTC():
     #File mode = read
@@ -289,8 +313,7 @@ def readPointsFromFileTC():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTC.append(temporaryList)
-           
-            
+
   #Function to read array of points from file
 def readPointsFromFileTD():
     #File mode = read
@@ -303,8 +326,8 @@ def readPointsFromFileTD():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTD.append(temporaryList)
-           
-            
+
+
   #Function to read array of points from file
 def readPointsFromFileTE():
     #File mode = read
@@ -317,8 +340,7 @@ def readPointsFromFileTE():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTE.append(temporaryList)
-           
-            
+
   #Function to read array of points from file
 def readPointsFromFileTF():
     #File mode = read
@@ -331,8 +353,8 @@ def readPointsFromFileTF():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTF.append(temporaryList)
-           
-            
+
+
   #Function to read array of points from file
 def readPointsFromFileTG():
     #File mode = read
@@ -345,7 +367,7 @@ def readPointsFromFileTG():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayTG.append(temporaryList)
-      
+
 
 def readPointsFromFileH():
     #File mode = read
@@ -358,7 +380,7 @@ def readPointsFromFileH():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayH.append(temporaryList)
-  
+
 def readPointsFromFileHA():
     #File mode = read
     mode = 'r'
@@ -370,7 +392,7 @@ def readPointsFromFileHA():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayHA.append(temporaryList)
-  
+
 def readPointsFromFileHB():
     #File mode = read
     mode = 'r'
@@ -382,7 +404,19 @@ def readPointsFromFileHB():
             temporaryList = [int(num) for num in line.split()]
             #Append the list to the main array
             fourTupleArrayHB.append(temporaryList)
-  
+
+def readPointsFromFile2():
+    #File mode = read
+    mode = 'r'
+    #Open file
+    with open("sampleDragon1", mode) as fileObject:
+        #Read each line
+        for line in fileObject:
+            #Split line to space separated integer and insert the numbers to a temporary list
+            temporaryList = [int(num) for num in line.split()]
+            #Append the list to the main array
+            fourTupleArray2.append(temporaryList)
+
 #Function to print the main array for debugging purpose
 def printTupleArray():
     for line in fourTupleArray:
@@ -395,6 +429,7 @@ def printTupleArray():
 #Main program
 
 #Read data from file
+readPointsFromFile2()
 readPointsFromFileRight()
 readPointsFromFileLeft()
 readPointsFromFileBody()
